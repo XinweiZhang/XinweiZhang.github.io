@@ -2,15 +2,13 @@
 layout: page
 title: About this blog
 description: An optional about page for Scriptor Jekyll theme
-feature_image: images/about.jpg
 ---
 
-**John Doe** is a Senior Art Director from [Vilnius](https://en.wikipedia.org/wiki/Vilnius), Lithuania. After graduating from The College of Visual Arts with a degree in Communication Design, he worked for three small graphic design shops where he honed his design style and sensibility.
+![alt text](/images/wanderer_above_the_sea_of_fog.jpg){: width="50%" style="display: block; margin: 0 auto;"}
 
-His work has been recognized by Communication Arts, Print, How, ID, IdN, AIGA, Effie, Archive, Graphis, AdFed and Rockport. Graphic Design USA named him a person to watch in 2015.
 
->The world always seems brighter when you’ve just made something that wasn’t there before. <cite>Neil Gaiman</cite>
+Hi there, and welcome to my website. I am currently pursuing a Ph.D. in Statistics at Rutgers University. Prior to that, I earned an A.M. in Statistics from Washington University in St. Louis (WUSTL). My passion for mathematics and computer science began during my undergraduate years at Renmin University of China (RUC), where I earned a B.S. in Mathematics and Applied Mathematics, as well as a B.E. in Computer Science.
 
-As a hobby, John Doe authors the most influential design blog in Lithuania with over 100,000 page views a month. He lives in Vilnius with his beautiful wife, two boys and one girl.
+Through this platform, I aim to share my research and projects with a wider audience, and engage with fellow learners, data enthusiasts, and researchers. In addition, I want to share some of my solutions to challenging probability and statistics problems, as well as practical implementations of frontier machine learning and deep learning techniques. I also plan to do this is by providing solutions to Leetcode challenges, as well as offering tutorials on how to implement various algorithms and techniques. 
 
-*Thank You for reading!*
+I hope that my website will be a valuable resource for anyone who is passionate about data, statistics, and machine learning. Thank you for visiting, and please don't hesitate to reach out if you have any questions or comments! You can contact me at my email address [xinwei.zhang@rutgers.edu](mailto:xinwei.zhang@rutgers.edu).

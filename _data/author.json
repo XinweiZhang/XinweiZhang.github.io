@@ -1,7 +1,8 @@
 {
-  "name": "John Doe",
-  "bio": "John is a designer, photographer, speaker, author of a couple of books about typography and the founder of photo magazine Curious.",
-  "url": "https://justgoodthemes.com",
-  "location": "Vilnius, Lithuania",
-  "image": "images/author.png"
+  "name": "Xinwei Zhang",
+  "bio": "Xinwei Zhang is a Ph.D. student at Rutgers University",
+  "url": "https://xinweizhang.github.io/",
+  "location": "NJ, US",
+  "image": "images/author.png", 
+  "email": "xinwei.zhang@rutgers.edu"
 }
