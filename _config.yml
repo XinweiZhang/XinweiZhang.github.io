@@ -19,7 +19,7 @@ description: "Welcome to my personal website! Here, I share my thoughts, ideas, 
 baseurl: ""
 
 # The base hostname & protocol of your site for where absolute urls are needed.
-url: "https://xinweizhang.github.io/"
+url: "https://xinweizhang.github.io"
 
 # Favicon
 favicon: images/favicon-X.png
@@ -32,13 +32,14 @@ navigation:
   - text: Home
     url: /
   - text: About
-    url: /about/
+    url: /about
+  - text: Publications
+    url: /publications
+  - text: Tags
+    url: /tags
+
 #  - text: Style Guide
 #    url: /style-guide/
-  - text: Publications
-    url: /publications/
-  - text: Tags
-    url: /tags/
 #  - text: Download
 #    url: https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
 
@@ -72,4 +73,3 @@ markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
-  load_paths: ["./_sass", "./_sass/academicons/css"]
