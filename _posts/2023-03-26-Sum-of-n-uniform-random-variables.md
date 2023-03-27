@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Finding the Expected Number of Uniform Random Variables to Exceed 1"
-description: "In this post, we explore the problem of finding the expected number of uniform random variables needed for their sum to exceed 1. We provide two different solutions to this problem and explain the underlying concepts of probability and geometric intuition. This problem is a classic example in probability theory and has practical applications in fields such as finance and statistics. Join us as we delve into the world of probability and explore this fascinating problem!"
+title: "Finding the expected mumber of uniform random variables to exceed 1"
+description: "In this post, we explore the problem of finding the expected value of minimum number of uniform random variables needed for their sum to exceed 1. We provide two different solutions to this problem and explain the underlying concepts of probability and geometric intuition. This problem is a classic example in probability theory and has practical applications in fields such as finance and statistics. Join us as we delve into the world of probability and explore this fascinating problem!"
 date: 2023-03-26
 tags: [probability]
 ---
