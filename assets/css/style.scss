@@ -55,3 +55,15 @@ $palette: (
 @import "animations";
 @import "prism";
 @import "academicons";
+
+.post-description {
+  border-left: 4px solid #333;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 1em;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+.post-description p {
+  display: inline;
+}
