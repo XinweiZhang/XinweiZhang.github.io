@@ -10,7 +10,7 @@ tags: [Probability]
 
 Given $$X_1,...,X_n$$ are iid random variables following a uniform distribution on the interval $$[0,1]$$, what is the expected value of the minimum number of these variables needed for their sum to exceed 1?
 
-## Solution 1
+### Solution 1
 Let $$N$$ be the random variable representing the minimum number of uniform random variables needed for their sum to exceed 1, i.e.,
 
 $$N = \inf_n \{ \sum_{i=1}^n X_i > 1\}.$$
@@ -42,7 +42,7 @@ $$
 Therefore, the expected value of the minimum number of these variables needed for their sum to exceed $$1$$ is $$e$$.
 
 
-## Solution 2:
+### Solution 2:
 
 We can solve this problem using an approach inspired by the coupon collector problem. Define the random variable $$N(t) = \inf_n \{ \sum_{i=1}^n X_i > t\}$$ and its expectation as $$M(t) = E[N(t)]$$.
 
@@ -69,10 +69,34 @@ $$
 Now we want to derive a general formula for $$M(t)$$ for $$0\leq t \leq 1$$. Similar calculations give:
 
 $$
-    M(t) =  1 + \int_{0}^t M(t-s)d s = 1 + \int_{0}^t M(s) ds .
+    M(t) =  1 + \int_{0}^t M(t-s)d s.
 $$
 
-Taking the derivative with respect to $$t$$ on both sides yields:
+In the equation, we want to simplify the expression in the second term. To do this, we can do change of variable. We introduce a new variable, $u$, and set it equal to $t-s$. This helps us rewrite the expression inside the integral in a simpler form:
+
+$$
+u = t - s \implies s = t - u
+$$
+
+We also need to adjust the limits of integration accordingly. After making these changes, we get:
+
+$$
+M(t) = 1 + \int_{t}^0 M(u) (-du)
+$$
+
+Now, since the limits of integration are reversed, we can switch their order and change the sign of the integral:
+
+$$
+M(t) = 1 + \int_{0}^t M(u) du
+$$
+
+So, the simplified equation is:
+
+$$
+M(t) = 1 + \int_{0}^t M(t-s) ds = 1 + \int_{0}^t M(s) ds
+$$
+
+This change of variable makes the equation easier to work with and allows us to proceed with finding the expected value. Now we can take the derivative with respect to $$t$$ on both sides, and with Leibniz rule, we get:
 
 $$
   M'(t) = M(t),
@@ -84,4 +108,4 @@ $$
   M(t) = e^{t}.
 $$
 
-Plugging in $$t=1$$ gives the final answer: $$M(1) = e^1 = e$$. 
+Plugging in $$t=1$$ gives the final answer: $$M(1) = e^1 = e$$.
