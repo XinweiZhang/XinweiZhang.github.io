@@ -44,7 +44,7 @@ Therefore, the expected value of the minimum number of these variables needed fo
 
 ### Solution 2:
 
-We can solve this problem using an approach inspired by the coupon collector problem. Define the random variable $$N(t) = \inf_n \{ \sum_{i=1}^n X_i > t\}$$ and its expectation as $$M(t) = E[N(t)]$$.
+We can solve this problem using an approach similar to the coupon collector problem. Define the random variable $$N(t) = \inf_n \{ \sum_{i=1}^n X_i > t\}$$ and its expectation as $$M(t) = E[N(t)]$$.
 
 Our goal is to find $$M(1)$$. We can compute $$M(1)$$ by conditioning on the first value $$X_1$$:
 
@@ -90,19 +90,13 @@ $$
 M(t) = 1 + \int_{0}^t M(u) du
 $$
 
-So, the simplified equation is:
-
-$$
-M(t) = 1 + \int_{0}^t M(t-s) ds = 1 + \int_{0}^t M(s) ds
-$$
-
 This change of variable makes the equation easier to work with and allows us to proceed with finding the expected value. Now we can take the derivative with respect to $$t$$ on both sides, and with Leibniz rule, we get:
 
 $$
   M'(t) = M(t),
 $$
 
-which gives a differential equation with the initial point $$M(0) = 1$$. Solving the differential equation gives:
+which is a differential equation with the initial condition $$M(0) = 1$$. Solving the differential equation gives:
 
 $$
   M(t) = e^{t}.
