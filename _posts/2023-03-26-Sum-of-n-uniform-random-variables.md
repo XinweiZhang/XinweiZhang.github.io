@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Finding the expected mumber of uniform random variables to exceed 1"
-description: "In this post, we explore the problem of finding the expected value of minimum number of uniform random variables needed for their sum to exceed 1. We provide two different solutions to this problem and explain the underlying concepts of probability and geometric intuition. This problem is a classic example in probability theory and has practical applications in fields such as finance and statistics. Join us as we delve into the world of probability and explore this fascinating problem!"
+description: "In this post, we explore the problem of finding the expected value of minimum number of uniform random variables needed for their sum to exceed 1. We provide two different solutions to this problem and explain the underlying concepts of probability and geometric intuition. This problem is a classic example in probability theory. Join us as we delve into the world of probability and explore this fascinating problem!"
 date: 2023-03-26
 tags: [Probability]
 ---
@@ -40,3 +40,48 @@ E[N] &= \sum_{n=1}^\infty n P(N=n)= \sum_{n=2}^\infty \frac{1}{(n-2)!}= \sum_{t=
 $$
 
 Therefore, the expected value of the minimum number of these variables needed for their sum to exceed $$1$$ is $$e$$.
+
+
+## Solution 2:
+
+We can solve this problem using an approach inspired by the coupon collector problem. Define the random variable $$N(t) = \inf_n \{ \sum_{i=1}^n X_i > t\}$$ and its expectation as $$M(t) = E[N(t)]$$.
+
+Our goal is to find $$M(1)$$. We can compute $$M(1)$$ by conditioning on the first value $$X_1$$:
+
+$$
+    M(1) = E[N(1)] =  E_{X_1}[ E[N(1) | X_1 = t ] ]= \int_{0}^1 E[N(1) | X_1 = t ]\cdot 1 d t
+$$
+
+By the definition of $$N(t)$$, if $$X_1$$ equals to a value $$t$$, then it remains to find:
+
+$$
+E[N(1) | X_1 = t ] = E[N(1-t)] + 1
+$$
+
+This equation represents the idea that, given the first variable $$X_1$$ taking the value $$t$$, we now need to find the expected number of additional uniform random variables required for their sum to exceed $$1-t$$, while accounting for the contribution of the first variable $$X_1$$ we have already considered.
+
+Therefore, we have:
+
+$$
+    M(1) = \int_{0}^1E[N(1-t)] + 1 d t = 1 + \int_{0}^1M(1-t)d t.
+$$
+
+Now we want to derive a general formula for $$M(t)$$ for $$0\leq t \leq 1$$. Similar calculations give:
+
+$$
+    M(t) =  1 + \int_{0}^t M(t-s)d s = 1 + \int_{0}^t M(s) ds .
+$$
+
+Taking the derivative with respect to $$t$$ on both sides yields:
+
+$$
+  M'(t) = M(t),
+$$
+
+which gives a differential equation with the initial point $$M(0) = 1$$. Solving the differential equation gives:
+
+$$
+  M(t) = e^{t}.
+$$
+
+Plugging in $$t=1$$ gives the final answer: $$M(1) = e^1 = e$$. 
