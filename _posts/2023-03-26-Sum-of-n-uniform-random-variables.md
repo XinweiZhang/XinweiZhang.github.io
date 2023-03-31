@@ -42,7 +42,7 @@ $$
 Therefore, the expected value of the minimum number of these variables needed for their sum to exceed $$1$$ is $$e$$.
 
 
-### Solution 2:
+### Solution 2
 
 We can solve this problem using an approach similar to the coupon collector problem. Define the random variable $$N(t) = \inf_n \{ \sum_{i=1}^n X_i > t\}$$ and its expectation as $$M(t) = E[N(t)]$$.
 
@@ -72,19 +72,7 @@ $$
     M(t) =  1 + \int_{0}^t M(t-s)d s.
 $$
 
-In the equation, we want to simplify the expression in the second term. To do this, we can do change of variable. We introduce a new variable, $u$, and set it equal to $t-s$. This helps us rewrite the expression inside the integral in a simpler form:
-
-$$
-u = t - s \implies s = t - u
-$$
-
-We also need to adjust the limits of integration accordingly. After making these changes, we get:
-
-$$
-M(t) = 1 + \int_{t}^0 M(u) (-du)
-$$
-
-Now, since the limits of integration are reversed, we can switch their order and change the sign of the integral:
+In the equation, we want to simplify the expression in the second term. To do this, we can do change of variable. We introduce a new variable, $$u$$, and set $$u=t-s$$. This helps us rewrite the expression inside the integral in a simpler form:
 
 $$
 M(t) = 1 + \int_{0}^t M(u) du
@@ -103,3 +91,51 @@ $$
 $$
 
 Plugging in $$t=1$$ gives the final answer: $$M(1) = e^1 = e$$.
+
+### Extension
+Now suppose we want to generalize the question to find the expected value of the minimum number of these variables needed for their sum to exceed an **arbitrary** $$t$$ where $$t \in [0, \infty]$$.
+
+The first solution becomes challenging to work with due to the complexity of the probability $$P(S_n\geq t)$$, which involved [Irwin–Hall distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution).
+
+This difficulty highlights the advantages of directly working with expectations, as demonstrated in the second solution. We will still make use of the idea of conditioning on $$X_1$$. For $$t>1$$, we have  
+
+$$
+M(t) = 1 + \int_{0}^1 E[N(t-s)] d s = 1 + \int_{t-1}^t E[N(u)] d u = 1 + \int_{t-1}^t M(u) d u.
+$$
+
+Taking derivative w.r.t to $$t$$ yields a delayed differential equaiton
+
+$$
+M'(t) = M(t) - M(t-1)
+$$
+
+on $$t > 1$$. Combining this with the previously obtained differential equation for $$0\leq t\leq 1$$, we have the following system:
+
+$$
+\begin{aligned}
+\begin{cases}
+M'(t) = M(t), & 0 \leq t \leq 1,\\
+M'(t) = M(t) - M(t-1), & t > 1.
+\end{cases}
+\end{aligned}
+$$
+
+with initial condition $$M(0)=1$$. While a general formula for the delayed equation is not obtainable, we can recursively find the solution on the intervals $$[1, 2], [2, 3], \dots$$. For example, consider $$t \in [1, 2]$$, the delayed differential equaiton now can be written as
+
+$$
+M'(t) = M(t) - e^{t-1}.
+$$
+
+This is an inhomogeneous first-order differential equation. We can find the integrating factor as:
+
+$$
+\mu(t) = \exp(\int_1^t -1 dt) = \exp(1-t).
+$$
+
+Uisng the integrating factor, we can determine the solution:
+
+$$
+m(t) = e^{t-1}( e - \int_{1}^t e^{1-t} e^{t-1} )d t = e^{t-1}( e - (t-1)) .
+$$
+
+In particular, we can find that $$m(2) = e^2 -e $$. By following this approach, we can continue obtaining formulas for other intervals.
