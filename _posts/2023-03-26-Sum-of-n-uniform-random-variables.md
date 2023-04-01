@@ -123,10 +123,10 @@ $$
 with initial condition $$M(0)=1$$. While a general formula for the delayed equation is not obtainable, we can recursively find the solution on the intervals $$[1, 2], [2, 3], \dots$$. For example, consider $$t \in [1, 2]$$, the delayed differential equaiton now can be written as
 
 $$
-M'(t) = M(t) - e^{t-1}.
+M'(t) = M(t) - e^{t-1},
 $$
 
-This is an inhomogeneous first-order differential equation. We can find the integrating factor as:
+with initial condition $$M(1) = e$$. This is an inhomogeneous first-order differential equation. We can find the integrating factor as:
 
 $$
 \mu(t) = \exp(\int_1^t -1 dt) = \exp(1-t).
