@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Finding the expected mumber of uniform random variables to exceed 1"
-description: "In this post, we explore the problem of finding the expected value of minimum number of uniform random variables needed for their sum to exceed 1. We provide two different solutions to this problem and explain the underlying concepts of probability and geometric intuition. This problem is a classic example in probability theory. Join us as we delve into the world of probability and explore this fascinating problem!"
+title: "Finding the expected number of uniform random variables to exceed 1"
+description: "In this post, we explore the problem of finding the expected value of the minimum number of uniform random variables needed for their sum to exceed 1. We provide two solutions to this problem and explain the underlying concepts of probability and geometric intuition. This problem is a classic example in probability theory. Join us as we delve into the world of probability and explore this fascinating problem!"
 date: 2023-03-26
 tags: [Probability]
 ---
@@ -15,7 +15,7 @@ Let $$N$$ be the random variable representing the minimum number of uniform rand
 
 $$N = \inf_n \{ \sum_{i=1}^n X_i > 1\}.$$
 
-In the first solution, we calculate the expectation by the definition: $$E[N] = \sum_{n=1}^\infty n P(N=n).$$
+In the first solution, we calculate the expectation by definition: $$E[N] = \sum_{n=1}^\infty n P(N=n).$$
 
 To determine $$P(N=n)$$, we first calculate the probability of the sum $$S_n = \sum_{i=1}^n X_i$$ being less than or equal to 1, denoted by $$P(S_n \leq 1)$$. Geometrically, we can consider the $$n$$-dimensional simplex $$T_n = \{x_i\geq 0:x_1+\cdots+x_n\leq 1\}$$, which represents the set of all points in the $$n$$-dimensional space where the sum $$S_n$$ is less than or equal to 1. Since the joint distribution of $$X_1, \ldots, X_n$$ is uniform over the unit hypercube $$[0, 1]^n$$, the probability of a point in the $$n$$-dimensional space falling into a specific region is proportional to the volume of that region. Therefore, the probability of $$S_n$$ being less than or equal to 1 is equal to the ratio of the volume of $$T_n$$ to the volume of the unit hypercube, which is 1.
 
@@ -97,7 +97,7 @@ Now suppose we want to generalize the question to find the expected value of the
 
 The first solution becomes challenging to work with due to the complexity of the probability $$P(S_n\geq t)$$, which involved [Irwin–Hall distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution).
 
-This difficulty highlights the advantages of directly working with expectations, as demonstrated in the second solution. We will still make use of the idea of conditioning on $$X_1$$. For $$t>1$$, we have  
+This difficulty highlights the advantages of directly working with expectations, as demonstrated in the second solution. We will still use the idea of conditioning on $$X_1$$. For $$t>1$$, we have  
 
 $$
 M(t) = 1 + \int_{0}^1 E[N(t-s)] d s = 1 + \int_{t-1}^t E[N(u)] d u = 1 + \int_{t-1}^t M(u) d u.
@@ -120,7 +120,7 @@ M'(t) = M(t) - M(t-1), & t > 1.
 \end{aligned}
 $$
 
-with initial condition $$M(0)=1$$. While a general formula for the delayed equation is not obtainable, we can recursively find the solution on the intervals $$[1, 2], [2, 3], \dots$$. For example, consider $$t \in [1, 2]$$, the delayed differential equaiton now can be written as
+with initial condition $$M(0)=1$$. While a general formula for the delayed equation is not obtainable, we can recursively find the solution on the intervals $$[1, 2], [2, 3], \dots$$. For example, consider $$t \in [1, 2]$$, the delayed differential equation now can be written as
 
 $$
 M'(t) = M(t) - e^{t-1},
@@ -132,7 +132,7 @@ $$
 \mu(t) = \exp(\int_1^t -1 dt) = \exp(1-t).
 $$
 
-Uisng the integrating factor, we can determine the solution:
+Using the integrating factor, we can determine the solution:
 
 $$
 m(t) = e^{t-1}( e - \int_{1}^t e^{1-t} e^{t-1} )d t = e^{t-1}( e - (t-1)) .
