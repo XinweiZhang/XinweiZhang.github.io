@@ -2,7 +2,6 @@
 
 comments:
   allowedFields: ["name", "email", "url", "message"]
-#  branch: "master"
   branch: "main"
   commitMessage: "Add Staticman data"
   filename: "entry_{@timestamp}"
@@ -12,10 +11,7 @@ comments:
       type: date
       options:
         format: "timestamp-seconds"
-  moderation: false # Change to true if you want to manually approve comments
+  moderation: false
   name: "Xinwei Zhang"
   path: "_data/comments/{options.slug}"
   requiredFields: ["name", "message"]
-  transforms:
-    email: md5
-    message: "trim"
