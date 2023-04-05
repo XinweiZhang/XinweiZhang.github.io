@@ -18,3 +18,4 @@ comments:
   requiredFields: ["name", "message"]
   transforms:
     email: md5
+    message: "trim"
