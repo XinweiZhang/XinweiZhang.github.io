@@ -67,7 +67,7 @@ layout: default
 
   <div id="staticman">
     <h2>Add a comment</h2>
-    <form action="{{ site.comments.staticman.endpoint }}" method="POST">
+    <form action="{{ site.staticman.endpoint }}" method="POST">
       <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}#comments">
       <input type="hidden" name="options[slug]" value="{{ page.slug }}">
       <input type="hidden" name="options[post_title]" value="{{ page.title }}">
