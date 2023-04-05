@@ -1,0 +1,20 @@
+# staticman.yml
+
+comments:
+  allowedFields: ["name", "email", "url", "message"]
+#  branch: "master"
+  branch: "initial_test"
+  commitMessage: "Add Staticman data"
+  filename: "entry_{@timestamp}"
+  format: "frontmatter"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "timestamp-seconds"
+  moderation: false # Change to true if you want to manually approve comments
+  name: "Xinwei Zhang"
+  path: "_data/comments/{options.slug}"
+  requiredFields: ["name", "email", "message"]
+  transforms:
+    email: md5

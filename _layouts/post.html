@@ -53,4 +53,36 @@ layout: default
     {% include disqus.html %}
   {% endif %}
 
+  {% if page.comments %}
+  <div id="comments">
+    <h2>Comments</h2>
+    {% for comment in page.comments %}
+    <div class="comment">
+      <p class="comment-author">{{ comment.name }} says:</p>
+      <p class="comment-text">{{ comment.comment | markdownify }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div id="staticman">
+    <h2>Add a comment</h2>
+    <form action="{{ site.staticman.endpoint }}" method="POST">
+      <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}#comments">
+      <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+      <input type="hidden" name="options[post_title]" value="{{ page.title }}">
+      <input type="hidden" name="options[repository]" value="{{ site.staticman.repository }}">
+      <input type="hidden" name="options[branch]" value="{{ site.staticman.branch }}">
+      <input type="hidden" name="options[path]" value="{{ page.path }}">
+      <label for="name">Name:</label>
+      <input type="text" name="fields[name]" id="name">
+      <label for="email">Email (optional):</label>
+      <input type="email" name="fields[email]" id="email">
+      <label for="comment">Comment (Markdown accpeted):</label>
+      <textarea name="fields[comment]" id="comment" cols="30" rows="10"></textarea>
+      <button type="submit">Submit comment</button>
+    </form>
+  </div>
+
+
 </main><!-- .main-content -->

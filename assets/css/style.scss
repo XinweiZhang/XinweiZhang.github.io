@@ -67,3 +67,71 @@ $palette: (
 .post-description p {
   display: inline;
 }
+#comments {
+  margin-top: 50px;
+}
+
+.comment {
+  margin-bottom: 20px;
+}
+
+.comment-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.comment-text {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#staticman {
+  margin-top: 50px;
+  width: 100%; /* Set the width of the comment box to 100% */
+  max-width: 800px; /* Set the maximum width of the comment box to 800px */
+  margin-left: auto; /* Center the comment box */
+  margin-right: auto; /* Center the comment box */
+}
+
+#staticman h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#staticman form {
+  margin-top: 20px;
+}
+
+#staticman label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#staticman input[type="text"],
+#staticman input[type="email"],
+#staticman textarea {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%; /* Set the width of the input fields to 100% */
+}
+
+#staticman input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#staticman input[type="submit"]:hover {
+  background-color: #3e8e41;
+}

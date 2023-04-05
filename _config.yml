@@ -44,7 +44,7 @@ navigation:
 #    url: https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
 
 # The shortname for your Disqus site to enable comments.
-disqus: justgoodthemes
+# disqus: justgoodthemes
 
 # Colors
 accent_color: '#2d72d9'
@@ -73,3 +73,12 @@ markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
+
+# Staticman configuration
+staticman:
+  # Endpoint URL for Staticman API
+  endpoint: https://staticman-xinweizhang.herokuapp.com/v3/entry/github/XinweiZhang/XinweiZhang.github.io/initial_test/{path}
+  # Name of your GitHub repository where comments will be stored
+  repository: XinweiZhang/XinweiZhang.github.io
+  # Name of the branch in your GitHub repository where comments will be stored
+  branch: initial_test
