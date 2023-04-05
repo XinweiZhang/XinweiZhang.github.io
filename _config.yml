@@ -74,18 +74,4 @@ sass:
   sass_dir: _sass
   style: compressed
 
-comments:
-  provider: staticman_v3
-  # Staticman configuration
-  staticman:
-    # Endpoint URL for Staticman API
-    endpoint: https://staticman-xinweizhang.herokuapp.com/v3/entry/github/XinweiZhang/XinweiZhang.github.io/main/{path}
-    # Name of your GitHub repository where comments will be stored
-    repository: XinweiZhang/XinweiZhang.github.io
-    # Name of the branch in your GitHub repository where comments will be stored
-    branch: main
-
-    githubAuth:
-      # Other configurations
-      clientId: Iv1.383575031561269c
-      clientSecret: 4f3dbcfc026c421a4d5965b7829af3d1f8f6c505
+staticman_url: https://staticman-xinweizhang.herokuapp.com/v3/entry/github/XinweiZhang/XinweiZhang.github.io/staticman/comments
