@@ -84,8 +84,8 @@ comments:
     repository: XinweiZhang/XinweiZhang.github.io
     # Name of the branch in your GitHub repository where comments will be stored
     branch: initial_test
-    #
-    # githubAuth:
-    #   # Other configurations
-    #   clientId: Iv1.383575031561269c
-    #   clientSecret: 4f3dbcfc026c421a4d5965b7829af3d1f8f6c505
+    
+    githubAuth:
+      # Other configurations
+      clientId: Iv1.383575031561269c
+      clientSecret: 4f3dbcfc026c421a4d5965b7829af3d1f8f6c505
