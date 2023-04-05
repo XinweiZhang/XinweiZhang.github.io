@@ -20,32 +20,22 @@
     });
   }
 
-  // Custom marked renderer to handle LaTeX formulas
-  const renderer = new marked.Renderer();
-  renderer.text = function (text) {
-    return text.replace(/\\\((.*?)\\\)/g, function (match, p1) {
-      return '\\(' + p1 + '\\)';
-    });
-  };
-
-  marked.use({ renderer });
-
   var simplemde = new SimpleMDE({
     element: document.getElementById("message-{{ include.parent_id }}"),
     forceSync: true,
     spellChecker: false,
     status: false,
     placeholder: 'Comment (markdown supported)',
-    previewRender: function (plainText, preview) {
-      setTimeout(function () {
+    previewRender: function(plainText, preview) {
+      setTimeout(function() {
         renderMathJax(preview);
       }, 0);
 
-      return marked(plainText);
+      return this.parent.markdown(plainText);
     },
   });
 
-  simplemde.codemirror.on('refresh', function () {
+  simplemde.codemirror.on('refresh', function() {
     renderMathJax(simplemde.codemirror.display.wrapper);
   });
 </script>
