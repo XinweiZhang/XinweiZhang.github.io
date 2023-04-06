@@ -10,7 +10,8 @@
     <h3>{{comment.name}}</h3>
     <time class="post-meta dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ comment.date | date:"%H:%M - %b %-d, %Y", "UTC-5"}}
+        <span class="comment-date" data-date="{{ comment.date | date_to_utc | date: '%Y-%m-%dT%H:%M:%S' }}"></span>
+
     </time>
     <p>{{comment.message | strip_html | markdownify }}</p>
     <script>
@@ -25,3 +26,26 @@
     </div>
 </div>
 {% endfor %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var commentDates = document.querySelectorAll('.comment-date');
+
+    function formatDateTime(date) {
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var day = date.getDate();
+      var month = date.toLocaleString('en', { month: 'short' });
+      var year = date.getFullYear();
+
+      return `${hours}:${minutes} - ${month} ${day}, ${year}`;
+    }
+
+    commentDates.forEach(function (commentDate) {
+      var dateString = commentDate.getAttribute('data-date');
+      var date = new Date(dateString);
+
+      commentDate.textContent = formatDateTime(date);
+    });
+  });
+</script>
