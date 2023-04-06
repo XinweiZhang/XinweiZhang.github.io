@@ -53,3 +53,10 @@ comments:
 
   transform:
     email: md5
+
+  reCaptcha:
+    enabled: true
+    # the siteKey is used as-is (no encryption)
+    siteKey: 6LepXGIlAAAAAFQ8-trTiJjSoBk91HDTBmTJehUB
+    # the secret is the encrypted blob you got back from the encrypt call
+    secret: AGS/G3W/FUqCCuytYa5UYsx0/AWIZYR1XvqcKc2VQHxshrwapPUJJpGS8BUwUGoahCUbBNjac/dWTM/VK1k3wfRE7PGaTjqkVZ6prH1GfKNy5OkVlRWFrFWgZTb52jM/+KCkil1A73SiuIsIvMaJCWtrGInT5vLXLzAM0e2qpElRHs+9cCqYv2+f+IlYZJQ7ANn9oB3HCtxojgyFPBrU2WfaS4bmlZT/021FLExMK+fNrt2uPBbVwX7gqIBL0CG3E4IoikSn7yjJZh+h59ZlZH+DtT++1fq3tloPpRQ4/wLxWnUzNn7ATxlgorudjR3SjwlPwM17w2eN/tKdF4RqjA==

@@ -1,16 +1,16 @@
 <form method="POST" action="{{ site.staticman_url }}" class="comment-form">
-  <!-- <input name="options[redirect]" type="hidden" value="{{ 'comment-success' | absolute_url }}"> -->
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-
   <input name="fields[parent_id]" type="hidden" value="{{ include.parent_id }}">
-
   <textarea id="message-{{ include.parent_id }}" class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
   <div class="comment-bottom">
     <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
     <input class="comment-email" name="fields[email]" type="email" placeholder="Email (optional)">
     <button class="comment-submit" type="submit">SEND</button>
   </div>
+  <div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}"></div>
 </form>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
   function renderMathJax(element) {
