@@ -2,7 +2,11 @@
 {% assign comments = site.data.comments[page.slug] | where_exp: "item", "item.parent_id == parent_id" %}
 {% assign sorted_comments = comments | sort: 'date' %}
 {% for comment in sorted_comments %}
-<div class="comment">
+{% assign author_class = "" %}
+{% if comment.name == site.author_name %}
+  {% assign author_class = "author-comment" %}
+{% endif %}
+<div class="comment {{ author_class }}">
     <h3>{{comment.name}}</h3>
     <time class="post-meta dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -11,7 +15,7 @@
     <p>{{comment.message | strip_html | markdownify }}</p>
     <div class="comment-reply">
         <input id="reply-{{ comment._id}}" type="checkbox" class="checkbox">
-        <label class="open" for="reply-{{ comment._id }}">Reply to {{ comment.name }}</label>
+        <label class="open" for="reply-{{ comment._id }}">↪&#xFE0E; Reply to {{ comment.name }}</label>
         <label class="close" for="reply-{{ comment._id }}">X</label>
         {% include comment-form.html parent_id=comment._id %}
         {% include comment-list.html parent_id=comment._id %}

@@ -11,6 +11,8 @@ lang: en-US
 # Site title
 title: "Xinwei Zhang"
 
+author_name: "Xinwei Zhang"
+
 # A description of your site for meta tag, search engine results.
 description: "Welcome to my personal website! Here, I share my thoughts, ideas, and projects related to statistics, probability, machine learning, and more. "
 
