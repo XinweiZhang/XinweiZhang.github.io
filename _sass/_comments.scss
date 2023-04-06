@@ -7,6 +7,7 @@
    h3 {
        display: inline;
        color: royalblue;
+       font-size: 16px; /* Adjust this value to your preferred font size */
    }
    p {
        margin: 0;
@@ -106,6 +107,14 @@
 
 .author-comment {
   border-left: 4px solid #1e90ff;
-  background-color: #f8f8f8;
+  background-color: #F5F5F5;
   padding-left: 12px;
+
+  h3 {
+    color: #1E3A8A;
+    background-color: #E0E0E0;
+    padding: 2px 8px;
+    border-radius: 50px;
+    font-size: 16px;
+  }
 }
