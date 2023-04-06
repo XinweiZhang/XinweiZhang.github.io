@@ -14,10 +14,10 @@
 </form>
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml.js" integrity="sha512-5PLzwBcNtVpuJHrMBPEaEgC9Jcjc8QTkHGEsCFZ7lJUGDgQ2n46aUTf/j7+jQ2D+uSGG3j3tyzE1tVJg0YC+GA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
   function renderMathJax(element) {
-    MathJax.typesetClear([element]);
     MathJax.typesetPromise([element]).catch((err) => {
       console.error('MathJax error: ', err);
     });
@@ -32,11 +32,10 @@
     status: false,
     placeholder: 'Comment (markdown supported). For inline formulas, enclose the formula in \\\\(...\\\\). For displayed formulas, use \\\\[...\\\\].',
     previewRender: function(plainText, preview) {
-      setTimeout(function() {
-        renderMathJax(preview);
-      }, 0);
-
-      return this.parent.markdown(plainText);
+      const renderedHTML = this.parent.markdown(plainText);
+      preview.innerHTML = renderedHTML;
+      renderMathJax(preview);
+      return ""; // Return an empty string to prevent SimpleMDE from overwriting the preview content
     },
   });
 
