@@ -13,6 +13,9 @@
         {{ comment.date | date:"%H:%M - %b %-d, %Y, %Y" }}
     </time>
     <p>{{comment.message | strip_html | markdownify }}</p>
+    <script>
+      renderMathJax(document.querySelector('.comment'));
+    </script>
     <div class="comment-reply">
         <input id="reply-{{ comment._id}}" type="checkbox" class="checkbox">
         <label class="open" for="reply-{{ comment._id }}">↪&#xFE0E; Reply to {{ comment.name }}</label>

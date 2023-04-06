@@ -11,7 +11,7 @@ lang: en-US
 # Site title
 title: "Xinwei Zhang"
 
-author_name: "Xinwei Zhang"
+author_name: "Author"
 
 # A description of your site for meta tag, search engine results.
 description: "Welcome to my personal website! Here, I share my thoughts, ideas, and projects related to statistics, probability, machine learning, and more. "
@@ -37,7 +37,9 @@ navigation:
     url: /about
   - text: Publications
     url: /publications
-  - text: By Topics
+  - text: Articles
+    url: /articles
+  - text: By Tags
     url: /tags
 
 #  - text: Style Guide
