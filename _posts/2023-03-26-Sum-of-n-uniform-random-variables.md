@@ -1,10 +1,13 @@
 ---
 layout: post
 title: "Finding the expected number of uniform random variables to exceed 1"
-description: "In this post, we explore the problem of finding the expected value of the minimum number of uniform random variables needed for their sum to exceed 1. We provide two solutions to this problem and explain the underlying concepts of probability and geometric intuition. This problem is a classic example in probability theory. Join us as we delve into the world of probability and explore this fascinating problem!"
+description: "This problem is a classic example in probability theory. Join us as we delve into the world of probability and explore this fascinating problem!"
 date: 2023-03-26
 tags: [Probability]
 ---
+
+In this post, we explore the problem of finding the expected value of the minimum number of uniform random variables needed for their sum to exceed 1. We begin by presenting the [problem statement](#problem), followed by two distinct solutions to the problem. The [first solution](#solution-1) calculates the expectation by definition, while the [second solution](#solution-2) approaches the problem by finding a differential equation for the expectation. Finally, we discuss an [extension](#extension) of the problem where we generalize the question to find the expected value of the minimum number of these variables needed for their sum to exceed an **arbitrary** value $$t$$, where $$t \in [0, \infty]$$.
+
 
 ## Problem
 
