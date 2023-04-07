@@ -25,9 +25,20 @@
 
 // Font.
 $font: (
-  primary: ("Lato","Helvetica Neue",Helvetica,sans-serif),
-  secondary: ("Noto Serif",Georgia,serif)
+  primary: ("Lato", "Helvetica Neue", Helvetica, sans-serif),
+  secondary: ("Palatino", serif)
 );
+
+/* Change the font for the body text */
+body {
+  font-family: map-get($font, secondary);
+}
+
+/* Change the font for MathJax expressions */
+.MathJax, .MathJax_Display {
+  font-family: map-get($font, secondary);
+}
+
 
 // Palette.
 {% assign accent = site.accent_color | default: '#2d72d9' %}
