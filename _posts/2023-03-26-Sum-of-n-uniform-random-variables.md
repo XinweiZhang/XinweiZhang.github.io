@@ -13,7 +13,7 @@ In this post, we explore the problem of finding the expected value of the minimu
 
 Given $$X_1,...,X_n$$ are iid random variables following a uniform distribution on the interval $$[0,1]$$, what is the expected value of the minimum number of these variables needed for their sum to exceed 1?
 
-### Solution 1
+### Solution 1: Using definition
 Let $$N$$ be the random variable representing the minimum number of uniform random variables needed for their sum to exceed 1, i.e.,
 
 $$N = \inf_n \{ \sum_{i=1}^n X_i > 1\}.$$
@@ -45,7 +45,7 @@ $$
 Therefore, the expected value of the minimum number of these variables needed for their sum to exceed $$1$$ is $$e$$.
 
 
-### Solution 2
+### Solution 2: Obtaining differential equation by conditioning on $$X_1$$
 
 We can solve this problem using an approach similar to the coupon collector problem. Define the random variable $$N(t) = \inf_n \{ \sum_{i=1}^n X_i > t\}$$ and its expectation as $$M(t) = E[N(t)]$$.
 
