@@ -9,9 +9,9 @@ tags: [Statistics]
 
 In this post, we explore the effects of data replication in linear regression, specifically examining how the LSE coefficient estimates, variance estimates, and $$t$$-statistics change after duplicating data. We consider two variations of this problem and provide solutions to both cases:
 * [Case 1](#case-1): We duplicate both $$x$$ and $$y$$.
-* [Case 2](#case-2): We only duplicates $$x$$ but appends $$y$$ with 0.
+* [Case 2](#case-2): We only duplicate $$x$$ but append $$y$$ with 0.
 
-I want to warn that the solutions have a **different** approach compared to the standard interview solutions (which will be provided as a comparison). The difference arises due to the sloppy consideration in a typical interview setting where the assumptions are not clear, i.e., whether you pretend you still have iid assumption after duplicating data.
+I want to clarify that the solutions presented here follow a principled statistical analysis and may **differ** from the standard interview solutions that will also be provided for comparison purposes.  This difference is due to the fact that the interview setting often involves incomplete or unclear assumptions, such as whether the iid assumption still holds after duplicating data. It is important to keep these differences in mind when considering the solutions presented here.
 
 <!--more-->
 ## Recap of simple linear regression
