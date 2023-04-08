@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Exploring the effects of data replication in linear regression"
-description: "This classic problem tests the fundamentals of linear regression by examining the impact of data replication on LSE coefficient estimates, variance estimates, and t-statistics. Join us as we dive into this intriguing problem!"
+description: "This classic problem tests the fundamentals of linear regression by examining the impact of data replication on least squares estimates, variance estimates, and t-statistics. Join us as we dive into this intriguing problem!"
 date: 2023-04-03
 tags: [Statistics]
 ---
 
 
-In this post, we explore the effects of data replication in linear regression, specifically examining how the LSE coefficient estimates, variance estimates, and $$t$$-statistics change after duplicating data. We consider two variations of this problem and provide solutions to both cases:
+In this post, we explore the effects of data replication in linear regression, specifically examining how the least squares estimates, variance estimates, and $$t$$-statistics change after duplicating data. We consider two variations of this problem and provide solutions to both cases:
 * [Case 1](#case-1): We duplicate both $$x$$ and $$y$$.
 * [Case 2](#case-2): We only duplicate $$x$$ but append $$y$$ with 0.
 
