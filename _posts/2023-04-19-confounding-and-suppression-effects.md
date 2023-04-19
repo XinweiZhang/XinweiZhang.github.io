@@ -210,7 +210,7 @@ x2   0.0100     0.1429    0.07    0.944
 This simulation serves as an example of the phenomenon presented in the original problem, and sheds light on the overlooked side in my exploration of the available answers.
 
 
-## Reference
+## References
 Berk, R., Brown, L., Buja, A., Zhang, K., & Zhao, L. (2013). Valid post-selection inference. The Annals of Statistics, 802-837.
 
 Friedman, L., & Wall, M. (2005). Graphical views of suppression and multicollinearity in multiple linear regression. The American Statistician, 59(2), 127-136.
