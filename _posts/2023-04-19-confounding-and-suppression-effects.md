@@ -81,7 +81,7 @@ $$
 This means, in general, when you believe $$F_0$$ is the true data-generating process, there is no reason to think about $$F_1$$ or $$F_2$$ model. The corresponding $$t$$-tests in $$F_1$$ or $$F_2$$ models are meaningless because they are not valid tests about the null hypotheses $$H_0:\beta_1^\ast=0$$ or $$H_0:\beta_2^\ast=0$$. (Or at least the actual distribution of the $$t$$-statistics follows a non-central $$t$$-distribution, thus it no longer can be inpterated based on standard $$t$$ value).
 
 ## Estimation and inference under submodel view
-In the most general case, when nonlinearity is allowed in $$\mu(X)$$, the estimation and inference are even more subtle due to the ancillarity of the regressor $$X$$ would fail, and $$X$$ can not be treated as fixed. We refer to Buja et al. (2020) for further information.
+In the most general case, when nonlinearity is allowed in $$\mu(X)$$, the estimation and inference are even more subtle due to the ancillarity of the regressor $$X$$ would fail, and $$X$$ can not be treated as fixed. We refer to Buja et al. (2019a, b) for further information.
 
 Below, we consider relatively restrictive assumptions which allow the simultaneous consideration of different linear models and suffices to serve our main purpose. Specifically, we assume $$(Y,X_1,X_2)$$ jointly follows a multivariate normal distribution such that $$E[Y\rvert  X_{M_i}]=\mu(X_{M_i})$$ is always linear for $$i=0,1,2$$. Assume the real data obtained are $$y, x_1, x_2 \in \mathbb{R}^n$$, then the OLS estimator
 
@@ -212,5 +212,9 @@ This simulation serves as an example of the phenomenon presented in the original
 
 ## References
 Berk, R., Brown, L., Buja, A., Zhang, K., & Zhao, L. (2013). Valid post-selection inference. The Annals of Statistics, 802-837.
+
+Buja, A., Brown, L., Berk, R., George, E., Pitkin, E., Traskin, M., ... & Zhao, L. (2019a). Models as Approximations I. Statistical Science, 34(4), 523-544.
+
+Buja, A., Brown, L., Kuchibhotla, A. K., Berk, R., George, E., & Zhao, L. (2019b). Models as Approximations II. Statistical Science, 34(4), 545-565.
 
 Friedman, L., & Wall, M. (2005). Graphical views of suppression and multicollinearity in multiple linear regression. The American Statistician, 59(2), 127-136.
