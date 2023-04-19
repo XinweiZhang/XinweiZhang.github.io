@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linear regression with group data"
-description: "This classic problem tests the fundamentals of linear regression by examining the impact of data replication on least squares estimates, noise variance estimates, and t-statistics. Join us as we dive into this intriguing problem!"
+description: "This post is suitable for readers who are familiar with linear regression and want to learn about a practical approach to dealing with grouped data. We hope that our discussion sheds some light on the trade-offs between computational efficiency and statistical accuracy when working with reduced data sets."
 date: 2023-03-25
 tags: [Statistics]
 ---
