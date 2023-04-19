@@ -38,8 +38,8 @@ navigation:
     url: /about
   - text: Publications
     url: /publications
-  - text: Articles
-    url: /articles
+  - text: Blog
+    url: /blog
   - text: By Tags
     url: /tags
 

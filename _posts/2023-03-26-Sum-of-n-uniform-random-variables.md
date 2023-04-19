@@ -17,6 +17,7 @@ Given $$X_1,...,X_n$$ are iid random variables following a uniform distribution 
 Let $$N$$ be the random variable representing the minimum number of uniform random variables needed for their sum to exceed 1, i.e.,
 
 $$N = \inf_n \{ \sum_{i=1}^n X_i > 1\}.$$
+
 <!--more-->
 In the first solution, we calculate the expectation by definition: $$E[N] = \sum_{n=1}^\infty n P(N=n).$$
 
