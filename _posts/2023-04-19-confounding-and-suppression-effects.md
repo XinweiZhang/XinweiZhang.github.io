@@ -213,7 +213,7 @@ This simulation serves as an example of the phenomenon presented in the original
 ## References
 Berk, R., Brown, L., Buja, A., Zhang, K., & Zhao, L. (2013). Valid post-selection inference. The Annals of Statistics, 802-837.
 
-Buja, A., Brown, L., Berk, R., George, E., Pitkin, E., Traskin, M., ... & Zhao, L. (2019a). Models as Approximations I. Statistical Science, 34(4), 523-544.
+Buja, A., Berk, R., Brown, L., George, E., Pitkin, E., Traskin, M., Zhao, L., & Zhang, K. (2019a). Models as Approximations I. Statistical Science, 34(4), 523-544.
 
 Buja, A., Brown, L., Kuchibhotla, A. K., Berk, R., George, E., & Zhao, L. (2019b). Models as Approximations II. Statistical Science, 34(4), 545-565.
 
