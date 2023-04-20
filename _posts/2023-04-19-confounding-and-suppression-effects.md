@@ -6,7 +6,7 @@ date: 2023-04-19
 tags: [Statistics]
 ---
 
-In this post, I want to write about some aspects of confounding effects and suppression effects that are often neglected in discussions surrounding these concepts in the linear regression. I was prompted to investigate this topic by the following question:
+In this post, I want to write about some aspects of confounding effects and suppression effects that are often neglected in discussions surrounding these concepts in the context of linear regression. I was prompted to investigate this topic by the following question:
 
 | When we run a regression of $$y\in \mathbb{R}^n$$ on both $$x_1, x_2\in\mathbb{R}^n$$, the $$t$$-tests for both predictors are significant. However, when we run a regression on each predictor individually, the $$t$$-test is insignificant. What could be the reason for this?
 
