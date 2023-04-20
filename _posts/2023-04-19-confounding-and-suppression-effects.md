@@ -207,7 +207,7 @@ x2   0.0100     0.1429    0.07    0.944
 
 ```
 
-This simulation serves as an example of the phenomenon presented in the original problem, and sheds light on the overlooked side in my exploration of the available answers.
+This simulation serves as an example of the phenomenon presented in the original problem, and as a supplement to the overlooked side in the available answers.
 
 
 ## References
