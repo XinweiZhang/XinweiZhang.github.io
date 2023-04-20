@@ -21,7 +21,7 @@ Output: [1,1,2,3,4,4]
 ```
 <!--more-->
 ## Template 1: Using 'and' condition
-The first template uses the 'and' condition in the while loop. When we reach the end of one of the lists, we need an extra block of code to append the remaining elements of the other list to the resulting linked list.
+The first template uses the 'and' condition in the while loop. When we reach the end of one of the lists, we need an extra block of code to append the remaining elements of the other list to the resulting linked list. The code in this case is the line `new_list.next = p1 or p2`.
 
 The advantage of this template is that it may avoid iterating over every element in both lists, potentially saving time. Especially in this problem, if, for example, point `p1` hit the end of the list, we can just append the other remaining nodes starting at `p2` to the new list. These remaining nodes will not be iterated.
 
@@ -55,7 +55,9 @@ class Solution:
 ```
 
 ## Template 2: Using 'or' condition
-Note the condition for appending the node at `p1`, specifically the line `if not p2 or (p1 and p1.val < p2.val)`. This condition has two parts:
+The second template uses the 'and' condition in the while loop. In this case, we will only jump out of the while loop until both pointers reach the ends of the lists. Consequently, the appending operation must be handled within the while loop itself.
+
+Note the condition for appending the node at `p1` to the new list, specifically the line `if not p2 or (p1 and p1.val < p2.val)`. This condition has two parts:
 
 1. `not p2`: This checks if the pointer `p2` has reached the end of `list2`. If it has, then the node at `p1` should be appended to the new list.
 2. `p1 and p1.val < p2.val`: This part checks if the pointer `p1` has not reached the end of `list1` and if the value at `p1` is smaller than the value at `p2`. If both of these conditions are true, then the node at `p1` should be appended to the new list. It's crucial to first verify that `p1` has not reached the end of `list1`, as attempting to access `p1.val` when `p1` is at the end would result in an error.
