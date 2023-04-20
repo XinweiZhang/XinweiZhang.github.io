@@ -61,7 +61,7 @@ where $$\varepsilon_i$$'s absorb both approximation errors and random noises. As
 Within the submodel view, it is improper to assume first-order correctness anymore, as the expectation $$E[Y\rvert X_{M_i}]=\mu(X_{M_i})$$ is not necessarily a linear function in $$X_{M_i}$$. The $$M_0$$ model is only regarded as the repository of all available predictors. The true parameters for model $$M_i$$ in the submodel view are defined as the minimizer of the $$L_2$$ loss in the population space:
 
 $$
-    \beta_{M_i}^\ast = \arg\min_{\beta} (Y - X_{M_i} \beta_{M_i} )^2
+    \beta_{M_i}^\ast = \arg\min_{\beta} E(Y - X_{M_i} \beta_{M_i} )^2
 $$
 
 where we use $$X_{M_i}$$ and $$\beta_{M_i}$$ to indicate all predictors and corresponding coefficients associated with model $$M_i$$.  Therefore, assuming solvability, the true parameter can be obtained as
