@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Exploring the intricacies of confounding and suppression effects in linear regression: A deeper look"
-description: "In this post, we dive deep into the interpretation of regression coefficients and their t-tests, highlighting the importance of understanding the full model view and submodel view. Uncover the subtle points in interpreting the significance of t-tests and learn why a significant t-test result does not necessarily indicate a good predictor. Join us as we explore these fundamental issues and enhance your understanding of linear regression."
+description: "In this post, we dive deep into some aspects of confounding effects and suppression effects that are often neglected in discussion. We learn different interpretations of regression coefficients, uncover the subtle points in interpreting the significance of t-tests and learn why a significant t-test result does not necessarily indicate a good predictor. Join us as we explore these fundamental issues and enhance your understanding of linear regression."
 date: 2023-04-19
 tags: [Statistics]
 ---
 
-In this post, I want to write about some aspects of confounding effects and suppression effects that are often neglected in discussions surrounding these concepts. I was prompted to investigate this topic by the following question:
+In this post, I want to write about some aspects of confounding effects and suppression effects that are often neglected in discussions surrounding these concepts in the linear regression. I was prompted to investigate this topic by the following question:
 
 | When we run a regression of $$y\in \mathbb{R}^n$$ on both $$x_1, x_2\in\mathbb{R}^n$$, the $$t$$-tests for both predictors are significant. However, when we run a regression on each predictor individually, the $$t$$-test is insignificant. What could be the reason for this?
 
