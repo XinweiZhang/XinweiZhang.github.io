@@ -55,7 +55,7 @@ class Solution:
 ```
 
 ## Template 2: Using 'or' condition
-The second template uses the 'and' condition in the while loop. In this case, we will only jump out of the while loop until both pointers reach the ends of the lists. Consequently, the appending operation must be handled within the while loop itself.
+The second template uses the 'or' condition in the while loop. In this case, we will only jump out of the while loop until both pointers reach the ends of the lists. Consequently, the appending operation must be handled within the while loop itself.
 
 Note the condition for appending the node at `p1` to the new list, specifically the line `if not p2 or (p1 and p1.val < p2.val)`. This condition has two parts:
 
