@@ -21,7 +21,7 @@ Output: [1,1,2,3,4,4]
 ```
 <!--more-->
 ## Template 1: Using 'and' condition
-The first template uses the 'and' condition in the while loop. When we reach the end of one of the lists, we need an extra block of code to append the remaining elements of the other list to the resulting linked list. The code in this case is the line `new_list.next = p1 or p2`.
+The first template uses the 'and' condition in the while loop, which means that we append a node to the new list in the while loop only when both pointers have not reached the end. Once one of the pointer reaches the end of a list, we exit the while loop. Consequently, an additional block of code is required to append the remaining elements of the other list to the resulting linked list. In this instance, the line new_list.next = p1 or p2 serves this purpose.
 
 The advantage of this template is that it may avoid iterating over every element in both lists, potentially saving time. Especially in this problem, if, for example, point `p1` hit the end of the list, we can just append the other remaining nodes starting at `p2` to the new list. These remaining nodes will not be iterated.
 
@@ -55,7 +55,7 @@ class Solution:
 ```
 
 ## Template 2: Using 'or' condition
-The second template uses the 'or' condition in the while loop. In this case, we will only jump out of the while loop until both pointers reach the ends of the lists. Consequently, the appending operation must be handled within the while loop itself.
+The second template uses the 'or' condition in the while loop. In this case, we exit the while loop until both pointers have reached the ends of ther respective lists. Consequently, all appending operations must be handled within the while loop itself.
 
 Note the condition for appending the node at `p1` to the new list, specifically the line `if not p2 or (p1 and p1.val < p2.val)`. This condition has two parts:
 
