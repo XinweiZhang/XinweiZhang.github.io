@@ -4,7 +4,7 @@ title: Publications
 description: This is the page of publication list
 ---
 
-- **_Zhang, X._**, Tan, Z., & Ou, Z. (2023), Persistently trained, diffusion-assisted energy-based models. Working manuscript.
+- **_Zhang, X._**, Tan, Z., & Ou, Z. (2023), [Persistently trained, diffusion-assisted energy-based models](https://arxiv.org/abs/2304.10707). arXiv preprint arXiv:2304.10707.
 
 - **_Zhang, X._**, & Tan, Z. (2023), Consistent and competitive hinge-like losses for multi-class top-$$k$$ classification. Working manuscript.
 
