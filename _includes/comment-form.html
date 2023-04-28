@@ -1,0 +1,45 @@
+<form method="POST" action="{{ site.staticman_url }}" class="comment-form">
+  <input name="options[redirect]" type="hidden" value="{{ 'comment-success' | absolute_url }}">
+  <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+  <input name="fields[parent_id]" type="hidden" value="{{ include.parent_id }}">
+  <textarea id="message-{{ include.parent_id }}" class="comment-message" name="fields[message]" placeholder="Comment (markdown accepted)" required></textarea>
+  <div class="comment-bottom">
+    <input class="comment-name" name="fields[name]" type="text" placeholder="Name" required>
+    <input class="comment-email" name="fields[email]" type="email" placeholder="Email (optional)">
+    <button class="comment-submit" type="submit">SEND</button>
+    <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">
+    <input type="hidden" name="options[reCaptcha][secret]" value="{{ site.reCaptcha.secret }}">
+  </div>
+  <div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}"></div>
+</form>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml.js" integrity="sha512-5PLzwBcNtVpuJHrMBPEaEgC9Jcjc8QTkHGEsCFZ7lJUGDgQ2n46aUTf/j7+jQ2D+uSGG3j3tyzE1tVJg0YC+GA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  function renderMathJax(element) {
+    MathJax.typesetPromise([element]).catch((err) => {
+      console.error('MathJax error: ', err);
+    });
+  }
+
+  var simplemde = new SimpleMDE({
+    element: document.getElementById("message-{{ include.parent_id }}"),
+    forceSync: true,
+
+    toolbar: ["bold", "italic", "heading", "quote", "unordered-list", "ordered-list", "link", "image", "table", "|", "preview", "guide"],
+    spellChecker: false,
+    status: false,
+    placeholder: 'Comment (markdown supported). For inline formulas, enclose the formula in \\\\(...\\\\). For displayed formulas, use \\\\[...\\\\].',
+    previewRender: function(plainText, preview) {
+      const renderedHTML = this.parent.markdown(plainText);
+      preview.innerHTML = renderedHTML;
+      renderMathJax(preview);
+      return ""; // Return an empty string to prevent SimpleMDE from overwriting the preview content
+    },
+  });
+
+  simplemde.codemirror.on('refresh', function() {
+    renderMathJax(simplemde.codemirror.display.wrapper);
+  });
+</script>

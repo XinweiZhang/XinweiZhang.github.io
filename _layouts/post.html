@@ -25,6 +25,10 @@ layout: default
     <div class="post-content">
       {{content}}
     </div><!-- .post-content -->
+
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+
     <div class="post-share">
       <span>Share:</span>
       <a target="_blank"
@@ -53,36 +57,9 @@ layout: default
     {% include disqus.html %}
   {% endif %}
 
-  {% if page.comments %}
-  <div id="comments">
-    <h2>Comments</h2>
-    {% for comment in page.comments %}
-    <div class="comment">
-      <p class="comment-author">{{ comment.name }} says:</p>
-      <p class="comment-text">{{ comment.message | markdownify }}</p>
-    </div>
-    {% endfor %}
-  </div>
-  {% endif %}
 
-  <div id="staticman">
-    <h2>Add a comment</h2>
-    <form action="{{ site.staticman.endpoint }}" method="POST">
-      <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}#comments">
-      <input type="hidden" name="options[slug]" value="{{ page.slug }}">
-      <input type="hidden" name="options[post_title]" value="{{ page.title }}">
-      <input type="hidden" name="options[repository]" value="{{ site.staticman.repository }}">
-      <input type="hidden" name="options[branch]" value="{{ site.staticman.branch }}">
-      <input type="hidden" name="options[path]" value="{{ page.path }}">
-      <label for="name">Name:</label>
-      <input type="text" name="fields[name]" id="name">
-      <label for="email">Email (optional):</label>
-      <input type="email" name="fields[email]" id="email">
-      <label for="message">Message (Markdown accepted):</label>
-      <textarea name="fields[message]" id="message" cols="30" rows="10"></textarea>
-      <button type="submit">Submit comment</button>
-    </form>
-  </div>
+  {% include comments.html %}
 
+  <!-- <a class="u-url" href="{{ page.url | relative_url }}" hidden></a> -->
 
 </main><!-- .main-content -->
