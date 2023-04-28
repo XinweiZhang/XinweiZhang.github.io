@@ -41,7 +41,7 @@ body {
 
 
 // Palette.
-{% assign accent = site.accent_color | default: '#2d72d9' %}
+{% assign accent = site.accent_color | default: '#D8D8D8' %}
 $palette: (
   accent:    {{ accent }},
   primary:   #6b747a,
