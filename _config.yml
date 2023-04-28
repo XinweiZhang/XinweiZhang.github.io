@@ -57,7 +57,7 @@ accent_color: '#2d72d9'
 
 # Site footer
 footer:
-  content: "&copy;2023 Xinwei Zhang. Powered by <a href=\"https://jekyllrb.com/\">Jekyll</a> and the <a href=\"https://jekyllthemes.io/theme/scriptor\">Scriptor Jekyll theme</a> by <a href=\"https://www.justgoodthemes.com/\">JustGoodThemes</a>. Licensed under <a href=\"https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme/blob/master/LICENSE.md\">MIT License</a>."
+  content: "&copy;2023 Xinwei Zhang. Powered by <a href=\"https://jekyllrb.com/\">Jekyll</a> and the <a href=\"https://jekyllthemes.io/theme/scriptor\">Scriptor Jekyll theme</a> by <a href=\"https://www.justgoodthemes.com/\">JustGoodThemes</a>."
   has_social: true
 
 # Plugins
