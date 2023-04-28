@@ -4,6 +4,7 @@ title: "Mastering two pointers technique in LeetCode: 'and' vs 'or' conditions"
 description: "Discover the nuances of using 'and' and 'or' conditions with the two pointers technique in LeetCode problems, demonstrated through merging two sorted lists."
 date: 2023-04-17
 tags: [Algorithm, Leetcode]
+keywords: leetcode, two pointers
 ---
 
 In this post, we will explore the two pointers technique, focusing on the differences and advantages of using 'and' and 'or' conditions within while loops. Understanding the subtle differences between these two approaches can be the key to solving LeetCode problems more efficiently.

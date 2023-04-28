@@ -4,6 +4,7 @@ title: "Exploring the effects of data replication in linear regression"
 description: "This classic problem tests the fundamentals of linear regression by examining the impact of data replication on least squares estimates, noise variance estimates, and t-statistics. Join us as we dive into this intriguing problem!"
 date: 2023-04-03
 tags: [Statistics]
+keywords: statistic, linear regression, data replication
 ---
 
 

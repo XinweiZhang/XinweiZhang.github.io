@@ -4,6 +4,7 @@ title: "Exploring the intricacies of confounding and suppression effects in line
 description: "In this post, we dive deep into some aspects of confounding effects and suppression effects that are often neglected in discussion. We learn different interpretations of regression coefficients, uncover the subtle points in interpreting the significance of t-tests and learn why a significant t-test result does not necessarily indicate a good predictor. Join us as we explore these fundamental issues and enhance your understanding of linear regression."
 date: 2023-04-19
 tags: [Statistics]
+keywords: statistics, linear regression, confounding effect, suppression effect
 ---
 
 In this post, I want to write about some aspects of confounding effects and suppression effects that are often neglected in discussions surrounding these concepts in the context of linear regression. I was prompted to investigate this topic by the following question:
@@ -16,8 +17,8 @@ This question raises fundamental issues in understanding linear regression. In a
 
 
 In this post, I aim to illustrate the three points:
-* The meaning of linear regression coefficients changes when considering different models.
-* The change in the significance of $$t$$-tests is not purely related to the change in the explanation of the variability in $$Y$$ after including the confounder/suppressor. It is more likely due to the change in the inference target.
+* The interpretation of linear regression coefficients can change when considering different models.
+* Changes in the significance of $$t$$-tests are not purely related to the change in the explanation of the variability in $$Y$$ after incorporating a confounder or suppressor. It is also closely tied to changes in the target of inference.
 * The significance of the $$t$$-test should be carefully considered and not hastily regarded as an indicator of a good predictor.
 
 <!--more-->
@@ -25,7 +26,7 @@ In this post, I aim to illustrate the three points:
 
 To begin, I will discuss the two different views of linear regression coefficients: the full model view and the submodel view.
 ## Full model view and submodel view
-### background
+### Background
 The distinction between the two interpretations of linear regression coefficients was introduced by Berk (2013). Let us consider a three-variable setting where we have a random response variable $$Y$$ and random predictor variables $$X_1$$ and $$X_2$$, all assumed to be centered and standardized for simplicity.
 
 * Full model view: The full model view assumes that the equation describes a "data-generating" mechanism for the response, hence having a causal interpretation. In this specific setting, the linear regression postulates a data-generating process with true parameters $$(\beta_1^\ast, \beta_2^\ast)$$ depicted by the equation:

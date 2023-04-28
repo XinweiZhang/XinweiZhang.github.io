@@ -4,6 +4,7 @@ title: "Linear regression with group data"
 description: "This post is suitable for readers who are familiar with linear regression and want to learn about a practical approach to dealing with grouped data. We hope that our discussion sheds some light on the trade-offs between computational efficiency and statistical accuracy when working with reduced data sets."
 date: 2023-03-25
 tags: [Statistics]
+keywords: statistics, linear regression, group data
 ---
 
 
