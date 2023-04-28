@@ -1,6 +1,8 @@
-MIT License
+This project is licensed under dual licenses:
 
-Copyright (c) 2020 Just Good Themes
+1. MIT License (applies to the website code)
+
+Copyright (c) 2023 Xinwei Zhang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +21,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+2. Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (applies to the content of the blog posts)
+
+Copyright (c) 2023 Xinwei Zhang
+
+The content of the blog posts is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0). To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
