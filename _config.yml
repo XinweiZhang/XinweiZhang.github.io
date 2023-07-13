@@ -11,9 +11,13 @@ lang: en-US
 # Site title
 title: "Xinwei Zhang"
 
-# A description of your site for meta tag, search engine results.
-description: "Welcome to my personal website! Here, I share my thoughts, ideas, and projects related to statistics, probability, machine learning, and more. "
+author_name: "Author"
 
+# A description of your site for meta tag, search engine results.
+description: "Welcome to my personal website! Here, I share my thoughts, ideas,
+ and projects related to statistics, probability, machine learning, and more. Check out the Blog to view my full list of articles."
+
+keywords: Jekyll, blog, tutorial, statistics, probability, machine learning, deep learning, linear regression
 
 # The subpath of your site, e.g. /blog, for generating urls.
 baseurl: ""
@@ -35,7 +39,9 @@ navigation:
     url: /about
   - text: Publications
     url: /publications
-  - text: By Topics
+  - text: Blog
+    url: /blog
+  - text: By Tags
     url: /tags
 
 #  - text: Style Guide
@@ -51,7 +57,7 @@ accent_color: '#2d72d9'
 
 # Site footer
 footer:
-  content: "&copy;2023 Xinwei Zhang. Powered by <a href=\"https://jekyllrb.com/\">Jekyll</a> and the <a href=\"https://jekyllthemes.io/theme/scriptor\">Scriptor Jekyll theme</a> by <a href=\"https://www.justgoodthemes.com/\">JustGoodThemes</a>. Licensed under <a href=\"https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme/blob/master/LICENSE.md\">MIT License</a>."
+  content: "&copy;2023 Xinwei Zhang. Powered by <a href=\"https://jekyllrb.com/\">Jekyll</a> and the <a href=\"https://jekyllthemes.io/theme/scriptor\">Scriptor Jekyll theme</a> by <a href=\"https://www.justgoodthemes.com/\">JustGoodThemes</a>."
   has_social: true
 
 # Plugins
@@ -74,15 +80,10 @@ sass:
   sass_dir: _sass
   style: compressed
 
-staticman:
-  # Endpoint URL for Staticman API
-  endpoint: https://staticman-xinweizhang.herokuapp.com/v3/entry/github/XinweiZhang/XinweiZhang.github.io/main/comments
-  # Name of your GitHub repository where comments will be stored
-  repository: XinweiZhang/XinweiZhang.github.io
-  # Name of the branch in your GitHub repository where comments will be stored
-  branch: main
+staticman_url: https://staticman-xinweizhang.herokuapp.com/v3/entry/github/XinweiZhang/XinweiZhang.github.io/main/comments
 
-    # githubAuth:
-    #   # Other configurations
-    #   clientId: Iv1.383575031561269c
-    #   clientSecret: 4f3dbcfc026c421a4d5965b7829af3d1f8f6c505
+reCaptcha:
+  siteKey: 6LepXGIlAAAAAFQ8-trTiJjSoBk91HDTBmTJehUB
+  secret: AGS/G3W/FUqCCuytYa5UYsx0/AWIZYR1XvqcKc2VQHxshrwapPUJJpGS8BUwUGoahCUbBNjac/dWTM/VK1k3wfRE7PGaTjqkVZ6prH1GfKNy5OkVlRWFrFWgZTb52jM/+KCkil1A73SiuIsIvMaJCWtrGInT5vLXLzAM0e2qpElRHs+9cCqYv2+f+IlYZJQ7ANn9oB3HCtxojgyFPBrU2WfaS4bmlZT/021FLExMK+fNrt2uPBbVwX7gqIBL0CG3E4IoikSn7yjJZh+h59ZlZH+DtT++1fq3tloPpRQ4/wLxWnUzNn7ATxlgorudjR3SjwlPwM17w2eN/tKdF4RqjA==
+
+include: ["robots.txt"]

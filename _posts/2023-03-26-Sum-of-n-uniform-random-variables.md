@@ -1,20 +1,25 @@
 ---
 layout: post
 title: "Finding the expected number of uniform random variables to exceed 1"
-description: "In this post, we explore the problem of finding the expected value of the minimum number of uniform random variables needed for their sum to exceed 1. We provide two solutions to this problem and explain the underlying concepts of probability and geometric intuition. This problem is a classic example in probability theory. Join us as we delve into the world of probability and explore this fascinating problem!"
+description: "This problem is a classic example in probability theory. Join us as we delve into the world of probability and explore this fascinating problem!"
 date: 2023-03-26
 tags: [Probability]
+keywords: probability, uniform random variable, expected number
 ---
+
+In this post, we explore the problem of finding the expected value of the minimum number of uniform random variables needed for their sum to exceed 1. We begin by presenting the [problem statement](#problem), followed by two distinct solutions to the problem. The [first solution](#solution-1) calculates the expectation by definition, while the [second solution](#solution-2) approaches the problem by finding a differential equation for the expectation. Finally, we discuss an [extension](#extension) of the problem where we generalize the question to find the expected value of the minimum number of these variables needed for their sum to exceed an **arbitrary** value $$t$$, where $$t \in [0, \infty]$$.
+
 
 ## Problem
 
 Given $$X_1,...,X_n$$ are iid random variables following a uniform distribution on the interval $$[0,1]$$, what is the expected value of the minimum number of these variables needed for their sum to exceed 1?
 
-### Solution 1
+### Solution 1: Using definition
 Let $$N$$ be the random variable representing the minimum number of uniform random variables needed for their sum to exceed 1, i.e.,
 
 $$N = \inf_n \{ \sum_{i=1}^n X_i > 1\}.$$
 
+<!--more-->
 In the first solution, we calculate the expectation by definition: $$E[N] = \sum_{n=1}^\infty n P(N=n).$$
 
 To determine $$P(N=n)$$, we first calculate the probability of the sum $$S_n = \sum_{i=1}^n X_i$$ being less than or equal to 1, denoted by $$P(S_n \leq 1)$$. Geometrically, we can consider the $$n$$-dimensional simplex $$T_n = \{x_i\geq 0:x_1+\cdots+x_n\leq 1\}$$, which represents the set of all points in the $$n$$-dimensional space where the sum $$S_n$$ is less than or equal to 1. Since the joint distribution of $$X_1, \ldots, X_n$$ is uniform over the unit hypercube $$[0, 1]^n$$, the probability of a point in the $$n$$-dimensional space falling into a specific region is proportional to the volume of that region. Therefore, the probability of $$S_n$$ being less than or equal to 1 is equal to the ratio of the volume of $$T_n$$ to the volume of the unit hypercube, which is 1.
@@ -42,7 +47,7 @@ $$
 Therefore, the expected value of the minimum number of these variables needed for their sum to exceed $$1$$ is $$e$$.
 
 
-### Solution 2
+### Solution 2: Obtaining differential equation by conditioning on $$X_1$$
 
 We can solve this problem using an approach similar to the coupon collector problem. Define the random variable $$N(t) = \inf_n \{ \sum_{i=1}^n X_i > t\}$$ and its expectation as $$M(t) = E[N(t)]$$.
 

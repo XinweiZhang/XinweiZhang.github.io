@@ -1,0 +1,51 @@
+{% assign parent_id = include.parent_id | default: '' %}
+{% assign comments = site.data.comments[page.slug] | where_exp: "item", "item.parent_id == parent_id" %}
+{% assign sorted_comments = comments | sort: 'date' %}
+{% for comment in sorted_comments %}
+{% assign author_class = "" %}
+{% if comment.name == site.author_name %}
+  {% assign author_class = "author-comment" %}
+{% endif %}
+<div class="comment {{ author_class }}">
+    <h3>{{comment.name}}</h3>
+    <time class="post-meta dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="comment-date" data-date="{{ comment.date | date_to_utc | date: '%Y-%m-%dT%H:%M:%S' }}"></span>
+
+    </time>
+    <p>{{comment.message | strip_html | markdownify }}</p>
+    <script>
+      renderMathJax(document.querySelector('.comment'));
+    </script>
+    <div class="comment-reply">
+        <input id="reply-{{ comment._id}}" type="checkbox" class="checkbox">
+        <label class="open" for="reply-{{ comment._id }}">↪&#xFE0E; Reply to {{ comment.name }}</label>
+        <label class="close" for="reply-{{ comment._id }}">X</label>
+        {% include comment-form.html parent_id=comment._id %}
+        {% include comment-list.html parent_id=comment._id %}
+    </div>
+</div>
+{% endfor %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var commentDates = document.querySelectorAll('.comment-date');
+
+    function formatDateTime(date) {
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var day = date.getDate();
+      var month = date.toLocaleString('en', { month: 'short' });
+      var year = date.getFullYear();
+
+      return `${hours}:${minutes} - ${month} ${day}, ${year}`;
+    }
+
+    commentDates.forEach(function (commentDate) {
+      var dateString = commentDate.getAttribute('data-date');
+      var date = new Date(dateString);
+
+      commentDate.textContent = formatDateTime(date);
+    });
+  });
+</script>
