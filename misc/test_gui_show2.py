@@ -42,7 +42,8 @@ class CaptionEditor(tk.Frame):
                         img.thumbnail((200, 200), Image.ANTIALIAS)
                         original_photo = ImageTk.PhotoImage(img)
                         filled_photo = original_photo
-                        if img.format == 'PNG':
+                        
+                        if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
                             filled_img = img.convert("RGBA")
                             filled_img = Image.alpha_composite(Image.new("RGB", filled_img.size), filled_img)
                             filled_img.thumbnail((200, 200), Image.ANTIALIAS)
