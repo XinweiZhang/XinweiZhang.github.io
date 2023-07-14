@@ -4,8 +4,9 @@ from PIL import Image, ImageTk
 import tkinter as tk
 
 class ScrollableFrame(tk.Frame):
-    def __init__(self, container):
-        super().__init__(container)
+    def __init__(self, container, **kwargs):
+        super().__init__(container, **kwargs)
+
         canvas = tk.Canvas(self)
         v_scrollbar = tk.Scrollbar(self, orient="vertical", command=canvas.yview)
         h_scrollbar = tk.Scrollbar(self, orient="horizontal", command=canvas.xview)
@@ -22,9 +23,12 @@ class ScrollableFrame(tk.Frame):
         canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
         canvas.configure(yscrollcommand=v_scrollbar.set, xscrollcommand=h_scrollbar.set)
 
-        canvas.pack(side="left", fill="both", expand=True)
-        v_scrollbar.pack(side="right", fill="y")
-        h_scrollbar.pack(side="bottom", fill="x")
+        canvas.grid(row=0, column=0, sticky='nsew')
+        v_scrollbar.grid(row=0, column=1, sticky='ns')
+        h_scrollbar.grid(row=1, column=0, sticky='ew')
+
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
 
 
 class CaptionEditor(ScrollableFrame):
