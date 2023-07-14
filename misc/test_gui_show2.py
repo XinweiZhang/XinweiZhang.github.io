@@ -2,8 +2,7 @@ import os
 import argparse
 from PIL import Image, ImageTk
 import tkinter as tk
-from tkinter import simpledialog
-import math
+
 
 class CaptionEditor(tk.Frame):
     def __init__(self, parent, image_file_chunks, grid_size):
@@ -99,15 +98,18 @@ class CaptionEditor(tk.Frame):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Image and Caption Viewer.')
-    parser.add_argument('--image_directory', type=str, default='./', help='The directory where images and caption files are stored.')
+    parser.add_argument('--image_dir', type=str, default='./', help='The directory where images and caption files are stored.')
     parser.add_argument('--grid_size', type=int, nargs=2, default=[4, 5], help='The size of the grid to display images (rows cols).')
+    parser.add_argument('--caption_extension', type=str, default=".caption", help='Extension of caption files.')
+
     args = parser.parse_args()
 
     root = tk.Tk()
-    root.title("Image Caption Editor")
-
-    image_files = sorted([f for f in os.listdir(args.image_directory) if f.lower().endswith('.jpg') or f.lower().endswith('.png')])
-    image_files = [(os.path.join(args.image_directory, f), os.path.join(args.image_directory, os.path.splitext(f)[0] + '.caption')) for f in image_files]
+    root.title("Image Caption Editor:")
+    image_extension = (".jpg", ".png")
+    image_directory = args.image_dir
+    image_files = sorted([f for f in os.listdir(image_directory) if f.endswith(image_extensions)])
+    image_files = [(os.path.join(image_directory, f), os.path.join(image_directory, os.path.splitext(f)[0] + args.caption_extension)) for f in image_files]
 
     # Split image list into chunks according to the grid size
     chunk_size = args.grid_size[0] * args.grid_size[1]
