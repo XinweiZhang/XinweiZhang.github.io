@@ -48,25 +48,24 @@ class CaptionEditor(ScrollableFrame):
 
         self.show_grid(self.image_file_chunks[self.current_chunk_index])
 
+    def load_image(self, image_file, caption_file):
+        with Image.open(image_file) as img:
+            img.thumbnail((200, 200), Image.ANTIALIAS)
+            original_photo = ImageTk.PhotoImage(img)
+            filled_photo = original_photo
+
+            if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
+                filled_img = img.convert("RGBA")
+                filled_img = Image.alpha_composite(Image.new("RGB", filled_img.size), filled_img)
+                filled_img.thumbnail((200, 200), Image.ANTIALIAS)
+                filled_photo = ImageTk.PhotoImage(filled_img)
+
+        caption_text = open(caption_file).read()
+        return original_photo, filled_photo, caption_text
 
     def load_all_images(self, image_file_chunks):
         for chunk in image_file_chunks:
-            chunk_images = []
-            for image_file, caption_file in chunk:
-                with Image.open(image_file) as img:
-                    img.thumbnail((200, 200), Image.ANTIALIAS)
-                    original_photo = ImageTk.PhotoImage(img)
-                    filled_photo = original_photo
-
-                    if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
-                        filled_img = img.convert("RGBA")
-                        filled_img = Image.alpha_composite(Image.new("RGB", filled_img.size), filled_img)
-                        filled_img.thumbnail((200, 200), Image.ANTIALIAS)
-                        filled_photo = ImageTk.PhotoImage(filled_img)
-
-                caption_text = open(caption_file).read()
-                chunk_images.append((original_photo, filled_photo, caption_text))
-
+            chunk_images = [self.load_image(image_file, caption_file) for image_file, caption_file in chunk]
             self.images.append(chunk_images)
 
     def show_grid(self, image_files):
@@ -81,16 +80,7 @@ class CaptionEditor(ScrollableFrame):
             for j in range(self.grid_size[1]):
                 if self.grid_size[1]*i+j < len(image_files):
                     image_file, caption_file = image_files[self.grid_size[1]*i+j]
-                    with Image.open(image_file) as img:
-                        img.thumbnail((200, 200), Image.ANTIALIAS)
-                        original_photo = ImageTk.PhotoImage(img)
-                        filled_photo = original_photo
-
-                        if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
-                            filled_img = img.convert("RGBA")
-                            filled_img = Image.alpha_composite(Image.new("RGB", filled_img.size), filled_img)
-                            filled_img.thumbnail((200, 200), Image.ANTIALIAS)
-                            filled_photo = ImageTk.PhotoImage(filled_img)
+                    original_photo, filled_photo, caption_text = self.load_image(image_file, caption_file)
 
                     label = tk.Label(self, image=original_photo)
                     label.image = original_photo  # Keep a reference to the image object to prevent garbage collection
@@ -98,7 +88,7 @@ class CaptionEditor(ScrollableFrame):
                     label.bind('<Double-1>', lambda e, l=label, o=original_photo, f=filled_photo: self.switch_image(l, o, f))  # Bind a double-click to the switch_image method
 
                     text = tk.Text(self, height=4, width=30)
-                    text.insert('1.0', open(caption_file).read())
+                    text.insert('1.0', caption_text)
                     text.config(state='disabled')  # Make it read-only by default
                     text.bind('<Double-1>', self.enable_editing)  # Bind a double-click to the enable_editing method
                     text.grid(row=2*i+1, column=j)
@@ -112,6 +102,7 @@ class CaptionEditor(ScrollableFrame):
 
         self.prev_button.grid(row=2*self.grid_size[0], column=0, sticky='ew')
         self.next_button.grid(row=2*self.grid_size[0], column=self.grid_size[1]-1, sticky='ew')
+
 
     def switch_image(self, label, original_photo, filled_photo):
         if label.image == original_photo:
@@ -174,6 +165,3 @@ if __name__ == "__main__":
     editor.pack(expand=True, fill='both')  # Using pack here as well
 
     root.mainloop()
-
-
-
