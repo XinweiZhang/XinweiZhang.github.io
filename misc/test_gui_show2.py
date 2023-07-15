@@ -44,7 +44,7 @@ class ImageLabel(tk.Label):
             self.master.current_selected.configure(relief="flat")  # Remove border from the previously selected image
         self.configure(relief="solid", bd=2)  # Add border to the newly selected image
         self.master.current_selected = self
-     #  self.master.master.focus_set()  # Set focus back to the root window
+        self.master.focus_set()  # Set focus to CaptionEditor when an image is clicked
 
 class CaptionEditor(ScrollableFrame):
     def __init__(self, parent, image_file_chunks, grid_size, preload_images):
@@ -224,6 +224,8 @@ if __name__ == "__main__":
     editor = CaptionEditor(app.scrollable_frame, image_file_chunks, args.grid_size, args.preload_images)
 
     editor.pack(expand=True, fill='both')  # Using pack here as well
+    # root.bind("<Delete>", editor.handle_delete)
+    # root.bind("<BackSpace>", editor.handle_delete)
     root.focus_set()  # Set initial focus to root window
 
     root.mainloop()
