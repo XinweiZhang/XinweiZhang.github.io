@@ -6,7 +6,7 @@ description: An optional about page for Scriptor Jekyll theme
 
 <!-- ![alt text](/images/wanderer_above_the_sea_of_fog.jpg){: width="50%" style="display: block; margin: 0 auto;"} -->
 
-![alt text](/images/author_image2.png){: height="10%" style="display: block; margin: 0 auto;"}
+![alt text](/images/author_image3.jpg){: height="8%" style="display: block; margin: 0 auto;"}
 
 Greetings,
 
