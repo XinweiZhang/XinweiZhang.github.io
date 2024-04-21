@@ -58,12 +58,17 @@ class Solution:
 ## Template 2: Using 'or' condition
 The second template uses the 'or' condition in the while loop. In this case, we exit the while loop until both pointers have reached the ends of ther respective lists. Consequently, all appending operations must be handled within the while loop itself.
 
-Note the condition for appending the node at `p1` to the new list, specifically the line `if not p2 or (p1 and p1.val < p2.val)`. This condition has two parts:
+Note the condition for appending the node at `p1` to the new list, specifically the line `if p1 and (not p2 or p1.val < p2.val)`. This condition has two parts:
 
-1. `not p2`: This checks if the pointer `p2` has reached the end of `list2`. If it has, then the node at `p1` should be appended to the new list.
-2. `p1 and p1.val < p2.val`: This part checks if the pointer `p1` has not reached the end of `list1` and if the value at `p1` is smaller than the value at `p2`. If both of these conditions are true, then the node at `p1` should be appended to the new list. It's crucial to first verify that `p1` has not reached the end of `list1`, as attempting to access `p1.val` when `p1` is at the end would result in an error.
+1. `p1`: This ensures that we check the existence of `p1` before attempting to access its value. It acts as a safeguard against null reference exceptions which could occur if `p1` were null.
+2. `not p2 or p1.val < p2.val`: This part of the condition serves two purposes:
+    - `not p2`: This checks if `p2` has reached the end of `list2`. If it has, and since `p1` is not null (ensured by the first part of the condition), the node at `p1` is appended to the new list.
+    - `p1.val < p2.val`: This checks if the value at `p1` is less than the value at `p2`. If true, it means `p1`'s node should be appended next in order to maintain order in the merged list.
 
-If neither of these conditions is true, the node at `p2` is appended to the new list. This approach ensures that we compare and merge nodes from both lists until we reach the end of one or both lists.
+If the condition fails (i.e., `p1` is null or `p1.val` is not less than `p2.val` while `p2` is not null), the node at `p2` is appended to the new list. This structure ensures that the merging process continues seamlessly by always choosing the smaller node between `p1` and `p2` until both lists are completely traversed.
+
+This approach is particularly effective in scenarios where one list may finish before the other, allowing the remaining elements of the non-empty list to be appended in one go, thereby completing the merge.
+
 
 ```python
 class Solution(object):
@@ -78,7 +83,7 @@ class Solution(object):
 
         # Merge the two lists by comparing the values of the nodes
         while p1 or p2:
-            if not p2 or (p1 and p1.val < p2.val):
+            if p1 and (not p2 or p1.val < p2.val):
                 new_list.next = p1
                 p1 = p1.next
             else:
